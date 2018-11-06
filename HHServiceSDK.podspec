@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HHServiceSDK"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "HHServiceSDK usual tools."
 
   # This description is used to generate tags and improve search results.
@@ -134,5 +134,15 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+
+#s.public_header_files = 'HHServiceSDK/HHServiceSDK.h'
+
+ s.subspec 'QrAndScan' do |ss|
+    ss.source_files = 'HHServiceSDK/*/{ScanQR,QRView,QRTool,HHAlert}.{h,m}'
+    ss.public_header_files = 'HHServiceSDK/*/*.h'
+  end
+
+
+ 
 
 end
