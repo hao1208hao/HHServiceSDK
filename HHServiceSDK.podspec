@@ -147,11 +147,13 @@ Pod::Spec.new do |s|
 
 
  s.subspec 'scanAndQR' do |ss|
+ 
     #ss.source_files = 'HHServiceSDK/scanAndQR/{ScanQR,QRView,QRTool,HHAlert}.{h,m}'
     ss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
     ss.public_header_files = 'HHServiceSDK/scanAndQR/{ScanQR,QRTool}.h'
     ss.dependency 'HHServiceSDK/sysAlert/HHAlert.h'
 
+ 
   end
 
 
