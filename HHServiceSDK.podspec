@@ -91,7 +91,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  =  "HHServiceSDK/**/*.{h,m}"
+  #s.source_files  =  "HHServiceSDK/**/*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -135,11 +135,23 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-#s.public_header_files = 'HHServiceSDK/HHServiceSDK.h'
+ s.public_header_files = 'HHServiceSDK/HHServiceSDK.h'
+ s.source_files = 'HHServiceSDK/HHServiceSDK.h'
+
+
+ s.subspec 'sysAlert' do |ss| 
+    ss.source_files = 'HHServiceSDK/sysAlert/*.{h,m}'
+    ss.public_header_files = 'HHServiceSDK/sysAlert/*.h' 
+
+  end
+
 
  s.subspec 'scanAndQR' do |ss|
-    ss.source_files = 'HHServiceSDK/扫描和二维码/{ScanQR,QRView,QRTool,HHAlert}.{h,m}'
-    ss.public_header_files = 'HHServiceSDK/扫描和二维码/{ScanQR，QRTool,HHAlert}.h'
+    #ss.source_files = 'HHServiceSDK/scanAndQR/{ScanQR,QRView,QRTool,HHAlert}.{h,m}'
+    ss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
+    ss.public_header_files = 'HHServiceSDK/scanAndQR/{ScanQR,QRTool}.h'
+    ss.dependency 'HHServiceSDK/sysAlert/HHAlert.h'
+
   end
 
 
