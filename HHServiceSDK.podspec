@@ -138,8 +138,8 @@ Pod::Spec.new do |s|
 #s.public_header_files = 'HHServiceSDK/HHServiceSDK.h'
 
  s.subspec 'scanAndQR' do |ss|
-    ss.source_files = 'HHServiceSDK/扫描和二维码/{ScanQR,QRView,QRTool,HHAlert}.{h,m}'
-    ss.public_header_files = 'HHServiceSDK/扫描和二维码/{ScanQR，QRTool,HHAlert}.h'
+    ss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
+    ss.public_header_files = 'HHServiceSDK/scanAndQR/{ScanQR,QRTool}.h'
   end
 
 
