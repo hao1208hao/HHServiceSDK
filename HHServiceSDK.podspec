@@ -137,7 +137,7 @@ Pod::Spec.new do |s|
   # s.dependency "JSONKit", "~> 1.4"
    
 
-  s.source_files  =  "HHServiceSDK/{sysAlert,scanAndQR,localValid}/*.{h,m}" ,"HHServiceSDK/*.{h,m}"
+  s.source_files  =  "HHServiceSDK/{scanAndQR}/*.{h,m}" ,"HHServiceSDK/*.{h,m}"
   #s.public_header_files = "HHServiceSDK/*.h"
 
   s.subspec 'sysAlert' do |ss| 
