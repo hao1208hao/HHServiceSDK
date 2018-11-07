@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A03B2FEA219299E60044C5CF /* HHValidLocalAuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A03B2FE8219299E60044C5CF /* HHValidLocalAuthManager.m */; };
+		A03B2FEB219299E60044C5CF /* HHValidLocalAuthManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A03B2FE9219299E60044C5CF /* HHValidLocalAuthManager.h */; };
 		A073DA1F21914CB200C3DA04 /* HHServiceSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A073DA1D21914CB200C3DA04 /* HHServiceSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A073DA7F21914E1600C3DA04 /* QRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A073DA7721914E1600C3DA04 /* QRView.m */; };
 		A073DA8021914E1600C3DA04 /* qr_scan_line_jd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A073DA7821914E1600C3DA04 /* qr_scan_line_jd@2x.png */; };
@@ -18,11 +20,11 @@
 		A073DA8621914E1600C3DA04 /* ScanQR.h in Headers */ = {isa = PBXBuildFile; fileRef = A073DA7E21914E1600C3DA04 /* ScanQR.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A073DA8A21914E6200C3DA04 /* HHAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = A073DA8821914E6200C3DA04 /* HHAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A073DA8B21914E6200C3DA04 /* HHAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = A073DA8921914E6200C3DA04 /* HHAlert.m */; };
-		A073DAB4219150F000C3DA04 /* HHValidLocalAuthManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A073DAB2219150F000C3DA04 /* HHValidLocalAuthManager.m */; };
-		A073DAB5219150F000C3DA04 /* HHValidLocalAuthManager.h in Headers */ = {isa = PBXBuildFile; fileRef = A073DAB3219150F000C3DA04 /* HHValidLocalAuthManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A03B2FE8219299E60044C5CF /* HHValidLocalAuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHValidLocalAuthManager.m; sourceTree = "<group>"; };
+		A03B2FE9219299E60044C5CF /* HHValidLocalAuthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHValidLocalAuthManager.h; sourceTree = "<group>"; };
 		A073DA1A21914CB200C3DA04 /* HHServiceSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHServiceSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A073DA1D21914CB200C3DA04 /* HHServiceSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHServiceSDK.h; sourceTree = "<group>"; };
 		A073DA1E21914CB200C3DA04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,8 +38,6 @@
 		A073DA7E21914E1600C3DA04 /* ScanQR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQR.h; sourceTree = "<group>"; };
 		A073DA8821914E6200C3DA04 /* HHAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHAlert.h; sourceTree = "<group>"; };
 		A073DA8921914E6200C3DA04 /* HHAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHAlert.m; sourceTree = "<group>"; };
-		A073DAB2219150F000C3DA04 /* HHValidLocalAuthManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHValidLocalAuthManager.m; sourceTree = "<group>"; };
-		A073DAB3219150F000C3DA04 /* HHValidLocalAuthManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHValidLocalAuthManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A03B2FE7219299E60044C5CF /* localValid */ = {
+			isa = PBXGroup;
+			children = (
+				A03B2FE8219299E60044C5CF /* HHValidLocalAuthManager.m */,
+				A03B2FE9219299E60044C5CF /* HHValidLocalAuthManager.h */,
+			);
+			path = localValid;
+			sourceTree = "<group>";
+		};
 		A073DA1021914CB200C3DA04 = {
 			isa = PBXGroup;
 			children = (
@@ -70,7 +79,7 @@
 		A073DA1C21914CB200C3DA04 /* HHServiceSDK */ = {
 			isa = PBXGroup;
 			children = (
-				A073DAB1219150F000C3DA04 /* 指纹或人脸 */,
+				A03B2FE7219299E60044C5CF /* localValid */,
 				A073DA8721914E6200C3DA04 /* sysAlert */,
 				A073DA7621914E1600C3DA04 /* scanAndQR */,
 				A073DA1D21914CB200C3DA04 /* HHServiceSDK.h */,
@@ -103,15 +112,6 @@
 			path = sysAlert;
 			sourceTree = "<group>";
 		};
-		A073DAB1219150F000C3DA04 /* 指纹或人脸 */ = {
-			isa = PBXGroup;
-			children = (
-				A073DAB2219150F000C3DA04 /* HHValidLocalAuthManager.m */,
-				A073DAB3219150F000C3DA04 /* HHValidLocalAuthManager.h */,
-			);
-			path = "指纹或人脸";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -119,8 +119,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A073DAB5219150F000C3DA04 /* HHValidLocalAuthManager.h in Headers */,
 				A073DA8A21914E6200C3DA04 /* HHAlert.h in Headers */,
+				A03B2FEB219299E60044C5CF /* HHValidLocalAuthManager.h in Headers */,
 				A073DA8621914E1600C3DA04 /* ScanQR.h in Headers */,
 				A073DA8221914E1600C3DA04 /* QRTool.h in Headers */,
 				A073DA1F21914CB200C3DA04 /* HHServiceSDK.h in Headers */,
@@ -201,7 +201,7 @@
 				A073DA7F21914E1600C3DA04 /* QRView.m in Sources */,
 				A073DA8121914E1600C3DA04 /* ScanQR.m in Sources */,
 				A073DA8521914E1600C3DA04 /* QRTool.m in Sources */,
-				A073DAB4219150F000C3DA04 /* HHValidLocalAuthManager.m in Sources */,
+				A03B2FEA219299E60044C5CF /* HHValidLocalAuthManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
