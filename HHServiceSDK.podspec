@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HHServiceSDK"
-  s.version      = "0.0.7"
+  s.version      = "0.0.8"
   s.summary      = "HHServiceSDK usual tools."
 
   # This description is used to generate tags and improve search results.
@@ -137,7 +137,7 @@ Pod::Spec.new do |s|
   # s.dependency "JSONKit", "~> 1.4"
    
 
-  s.source_files  =  "HHServiceSDK/{scanAndQR}/*.{h,m}" ,"HHServiceSDK/*.{h,m}"
+  s.source_files  =  "HHServiceSDK/*.{h,m}"
   #s.public_header_files = "HHServiceSDK/*.h"
 
   s.subspec 'sysAlert' do |ss| 
@@ -155,14 +155,14 @@ Pod::Spec.new do |s|
   end
 
 
-  #s.subspec 'scanAndQR' do |ss|
+  s.subspec 'scan' do |ss|
  
-    #ss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
+    ss.source_files = 'HHServiceSDK/scan/*.{h,m}'
     #sss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
-    #ss.public_header_files = 'HHServiceSDK/localValid/*.h'
+    ss.public_header_files = 'HHServiceSDK/scan/*.h'
     #ss.dependency 'HHServiceSDK/sysAlert'
 
  
-  #end
+  end
 
 end

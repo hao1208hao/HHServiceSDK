@@ -81,14 +81,14 @@
 			children = (
 				A03B2FE7219299E60044C5CF /* localValid */,
 				A073DA8721914E6200C3DA04 /* sysAlert */,
-				A073DA7621914E1600C3DA04 /* scanAndQR */,
+				A073DA7621914E1600C3DA04 /* scan */,
 				A073DA1D21914CB200C3DA04 /* HHServiceSDK.h */,
 				A073DA1E21914CB200C3DA04 /* Info.plist */,
 			);
 			path = HHServiceSDK;
 			sourceTree = "<group>";
 		};
-		A073DA7621914E1600C3DA04 /* scanAndQR */ = {
+		A073DA7621914E1600C3DA04 /* scan */ = {
 			isa = PBXGroup;
 			children = (
 				A073DA7821914E1600C3DA04 /* qr_scan_line_jd@2x.png */,
@@ -100,7 +100,7 @@
 				A073DA7E21914E1600C3DA04 /* ScanQR.h */,
 				A073DA7921914E1600C3DA04 /* ScanQR.m */,
 			);
-			path = scanAndQR;
+			path = scan;
 			sourceTree = "<group>";
 		};
 		A073DA8721914E6200C3DA04 /* sysAlert */ = {
