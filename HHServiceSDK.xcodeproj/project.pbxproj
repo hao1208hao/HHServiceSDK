@@ -71,15 +71,15 @@
 			isa = PBXGroup;
 			children = (
 				A073DAB1219150F000C3DA04 /* 指纹或人脸 */,
-				A073DA8721914E6200C3DA04 /* 系统弹窗 */,
-				A073DA7621914E1600C3DA04 /* 扫描和二维码 */,
+				A073DA8721914E6200C3DA04 /* sysAlert */,
+				A073DA7621914E1600C3DA04 /* scanAndQR */,
 				A073DA1D21914CB200C3DA04 /* HHServiceSDK.h */,
 				A073DA1E21914CB200C3DA04 /* Info.plist */,
 			);
 			path = HHServiceSDK;
 			sourceTree = "<group>";
 		};
-		A073DA7621914E1600C3DA04 /* 扫描和二维码 */ = {
+		A073DA7621914E1600C3DA04 /* scanAndQR */ = {
 			isa = PBXGroup;
 			children = (
 				A073DA7821914E1600C3DA04 /* qr_scan_line_jd@2x.png */,
@@ -91,16 +91,16 @@
 				A073DA7E21914E1600C3DA04 /* ScanQR.h */,
 				A073DA7921914E1600C3DA04 /* ScanQR.m */,
 			);
-			path = "扫描和二维码";
+			path = scanAndQR;
 			sourceTree = "<group>";
 		};
-		A073DA8721914E6200C3DA04 /* 系统弹窗 */ = {
+		A073DA8721914E6200C3DA04 /* sysAlert */ = {
 			isa = PBXGroup;
 			children = (
 				A073DA8821914E6200C3DA04 /* HHAlert.h */,
 				A073DA8921914E6200C3DA04 /* HHAlert.m */,
 			);
-			path = "系统弹窗";
+			path = sysAlert;
 			sourceTree = "<group>";
 		};
 		A073DAB1219150F000C3DA04 /* 指纹或人脸 */ = {

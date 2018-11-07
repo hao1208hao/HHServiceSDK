@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HHServiceSDK"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "HHServiceSDK usual tools."
 
   # This description is used to generate tags and improve search results.
@@ -137,9 +137,9 @@ Pod::Spec.new do |s|
 
 #s.public_header_files = 'HHServiceSDK/HHServiceSDK.h'
 
- s.subspec 'QrAndScan' do |ss|
-    ss.source_files = 'HHServiceSDK/*/{ScanQR,QRView,QRTool,HHAlert}.{h,m}'
-    ss.public_header_files = 'HHServiceSDK/*/*.h'
+ s.subspec 'scanAndQR' do |ss|
+    ss.source_files = 'HHServiceSDK/扫描和二维码/{ScanQR,QRView,QRTool,HHAlert}.{h,m}'
+    ss.public_header_files = 'HHServiceSDK/扫描和二维码/{ScanQR，QRTool,HHAlert}.h'
   end
 
 
