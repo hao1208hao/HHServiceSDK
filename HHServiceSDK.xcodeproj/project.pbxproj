@@ -54,8 +54,8 @@
 		A03B2FE7219299E60044C5CF /* localValid */ = {
 			isa = PBXGroup;
 			children = (
-				A03B2FE8219299E60044C5CF /* HHValidLocalAuthManager.m */,
 				A03B2FE9219299E60044C5CF /* HHValidLocalAuthManager.h */,
+				A03B2FE8219299E60044C5CF /* HHValidLocalAuthManager.m */,
 			);
 			path = localValid;
 			sourceTree = "<group>";

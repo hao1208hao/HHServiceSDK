@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HHServiceSDK"
-  s.version      = "0.0.5"
+  s.version      = "0.0.7"
   s.summary      = "HHServiceSDK usual tools."
 
   # This description is used to generate tags and improve search results.
@@ -90,8 +90,9 @@ Pod::Spec.new do |s|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
-
-  #s.source_files  =  "HHServiceSDK/**/*.{h,m}"
+  
+  # 这里是可以用的
+  #s.source_files  =  "HHServiceSDK/{localValid,scanAndQR}/*.{h,m}" ,"HHServiceSDK/*.{h,m}"
   #s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -134,29 +135,34 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
-
-  s.public_header_files = 'HHServiceSDK/HHServiceSDK.h'
-  s.source_files = 'HHServiceSDK/HHServiceSDK.h'
-
- 
-  s.subspec 'sysAlert' do |ss| 
-    ss.source_files = 'HHServiceSDK/sysAlert/*.{h,m}'
-    ss.public_header_files = 'HHServiceSDK/sysAlert/*.h' 
-  end
    
 
+  s.source_files  =  "HHServiceSDK/{sysAlert,scanAndQR,localValid}/*.{h,m}" ,"HHServiceSDK/*.{h,m}"
+  #s.public_header_files = "HHServiceSDK/*.h"
 
- s.subspec 'scanAndQR' do |ss|
+  s.subspec 'sysAlert' do |ss| 
+    ss.source_files = 'HHServiceSDK/sysAlert/*.{h,m}'
+    ss.public_header_files = 'HHServiceSDK/sysAlert/*.h'  
+  end
+
+  s.subspec 'localValid' do |ss|
  
-    #ss.source_files = 'HHServiceSDK/scanAndQR/{ScanQR,QRView,QRTool,HHAlert}.{h,m}'
-    ss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
-    ss.public_header_files = 'HHServiceSDK/scanAndQR/{ScanQR,QRTool}.h'
-    ss.dependency 'HHServiceSDK/sysAlert/HHAlert.h'
-
+    ss.source_files = 'HHServiceSDK/localValid/*.{h,m}'
+    #sss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
+    ss.public_header_files = 'HHServiceSDK/localValid/*.h'
+    #ss.dependency 'HHServiceSDK/sysAlert' 
  
   end
 
 
+  #s.subspec 'scanAndQR' do |ss|
  
+    #ss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
+    #sss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
+    #ss.public_header_files = 'HHServiceSDK/localValid/*.h'
+    #ss.dependency 'HHServiceSDK/sysAlert'
+
+ 
+  #end
 
 end
