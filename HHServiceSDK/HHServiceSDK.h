@@ -24,6 +24,7 @@ FOUNDATION_EXPORT const unsigned char HHServiceSDKVersionString[];
 #import <HHServiceSDK/HHUseInfo.h>
 #import <HHServiceSDK/HHMacros.h>
 #import <HHServiceSDK/HHSingleton.h>
+#import <HHServiceSDK/HHSingletons.h>
 #import <HHServiceSDK/TakeInSecretVC.h>
 #import <HHServiceSDK/HHImageCode.h>
 #import <HHServiceSDK/WKWebViewVC.h>
