@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HHServiceSDK"
-  s.version      = "0.0.8"
+  s.version      = "1.0.0"
   s.summary      = "HHServiceSDK usual tools."
 
   # This description is used to generate tags and improve search results.
@@ -138,7 +138,6 @@ Pod::Spec.new do |s|
    
 
   s.source_files  =  "HHServiceSDK/*.{h,m}"
-  #s.public_header_files = "HHServiceSDK/*.h"
 
   s.subspec 'sysAlert' do |ss| 
     ss.source_files = 'HHServiceSDK/sysAlert/*.{h,m}'
@@ -147,10 +146,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'localValid' do |ss|
  
-    ss.source_files = 'HHServiceSDK/localValid/*.{h,m}'
-    #sss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
-    ss.public_header_files = 'HHServiceSDK/localValid/*.h'
-    #ss.dependency 'HHServiceSDK/sysAlert' 
+    ss.source_files = 'HHServiceSDK/localValid/*.{h,m}' 
+    ss.public_header_files = 'HHServiceSDK/localValid/*.h' 
  
   end
 
@@ -159,10 +156,47 @@ Pod::Spec.new do |s|
  
     ss.source_files = 'HHServiceSDK/scan/*.{h,m}'
     #sss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
-    ss.public_header_files = 'HHServiceSDK/scan/*.h'
-    #ss.dependency 'HHServiceSDK/sysAlert'
+    ss.public_header_files = 'HHServiceSDK/scan/{ScanQR,QRTool}.h'
+    ss.dependency 'HHServiceSDK/sysAlert'
 
  
   end
+
+
+  s.subspec 'useInfo' do |ss|
+ 
+    ss.source_files = 'HHServiceSDK/useInfo/*.{h,m}'
+    #sss.source_files = 'HHServiceSDK/scanAndQR/*.{h,m}'
+    ss.public_header_files = 'HHServiceSDK/useInfo/*.h'
+
+ 
+  end
+
+  s.subspec 'location' do |ss|
+ 
+    ss.source_files = 'HHServiceSDK/location/*.{h,m}' 
+    ss.public_header_files = 'HHServiceSDK/location/*.h'
+    ss.frameworks ='CoreLocation'
+    #ss.dependency 'HHServiceSDK/useInfo' ,'HHServiceSDK/HHSingleton.h','HHServiceSDK/HHMacros.h'
+ 
+  end
+
+  s.subspec 'camera' do |ss|
+ 
+    ss.source_files = 'HHServiceSDK/camera/*.{h,m}' 
+    ss.public_header_files = 'HHServiceSDK/camera/*.h'
+
+ 
+  end
+
+
+  #s.subspec 'baseView' do |ss|
+ 
+    #ss.source_files = 'HHServiceSDK/baseView/{WKWebView,imageCode}/*.{h,m}' 
+    #ss.public_header_files = 'HHServiceSDK/baseView/{WKWebView,imageCode}/{WKWebViewVC,HHImageCode}.h'
+    #ss.frameworks ='WebKit' 
+    #ss.dependency 'HHServiceSDK'
+ 
+  #end
 
 end
