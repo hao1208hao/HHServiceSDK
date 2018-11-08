@@ -209,11 +209,24 @@ Pod::Spec.new do |s|
 
 
   s.subspec 'baseView' do |ss|
+    
+    ss.subspec 'WKWebView' do |sss|
+      sss.source_files = 'HHServiceSDK/baseView/WKWebView/*.{h,m}' 
+      sss.public_header_files = 'HHServiceSDK/baseView/WKWebView/WKWebViewVC.h'
+      sss.frameworks ='WebKit' 
+      sss.dependency 'HHServiceSDK/macros'
+
+    end
+
+
+    ss.subspec 'imageCode' do |sss|
+      sss.source_files = 'HHServiceSDK/baseView/imageCode/*.{h,m}' 
+      sss.public_header_files = 'HHServiceSDK/baseView/imageCode/HHImageCode.h'
+      sss.dependency 'HHServiceSDK/macros'
+
+    end
  
-    ss.source_files = 'HHServiceSDK/baseView/{WKWebView,imageCode}/*.{h,m}' 
-    ss.public_header_files = 'HHServiceSDK/baseView/{WKWebView,imageCode}/{WKWebViewVC,HHImageCode}.h'
-    ss.frameworks ='WebKit' 
-    ss.dependency 'HHServiceSDK/macros'
+    
  
   end
 
