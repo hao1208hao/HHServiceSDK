@@ -139,6 +139,9 @@ Pod::Spec.new do |s|
 
   s.source_files  =  "HHServiceSDK/*.{h,m}"
 
+  s.public_header_files = 'HHServiceSDK/*.h'
+
+
   s.subspec 'sysAlert' do |ss| 
     ss.source_files = 'HHServiceSDK/sysAlert/*.{h,m}'
     ss.public_header_files = 'HHServiceSDK/sysAlert/*.h'  
@@ -177,7 +180,7 @@ Pod::Spec.new do |s|
     ss.source_files = 'HHServiceSDK/location/*.{h,m}' 
     ss.public_header_files = 'HHServiceSDK/location/*.h'
     ss.frameworks ='CoreLocation'
-    #ss.dependency 'HHServiceSDK/useInfo' ,'HHServiceSDK/HHSingleton.h','HHServiceSDK/HHMacros.h'
+    ss.dependency 'HHServiceSDK/useInfo' 
  
   end
 
@@ -190,13 +193,13 @@ Pod::Spec.new do |s|
   end
 
 
-  #s.subspec 'baseView' do |ss|
+  s.subspec 'baseView' do |ss|
  
-    #ss.source_files = 'HHServiceSDK/baseView/{WKWebView,imageCode}/*.{h,m}' 
-    #ss.public_header_files = 'HHServiceSDK/baseView/{WKWebView,imageCode}/{WKWebViewVC,HHImageCode}.h'
-    #ss.frameworks ='WebKit' 
-    #ss.dependency 'HHServiceSDK'
+    ss.source_files = 'HHServiceSDK/baseView/{WKWebView,imageCode}/*.{h,m}' 
+    ss.public_header_files = 'HHServiceSDK/baseView/{WKWebView,imageCode}/{WKWebViewVC,HHImageCode}.h'
+    ss.frameworks ='WebKit' 
+    ss.dependency 'HHServiceSDK/HHMacros.h'
  
-  #end
+  end
 
 end

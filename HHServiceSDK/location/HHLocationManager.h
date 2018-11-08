@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "HHSingleton.h"
+#import <HHServiceSDK/HHSingleton.h>
 
 @interface HHLocationManager : CLLocationManager
 
