@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HHServiceSDK"
-  s.version      = "1.0.0"
+  s.version      = "1.0.2"
   s.summary      = "HHServiceSDK usual tools."
 
   # This description is used to generate tags and improve search results.
@@ -139,8 +139,23 @@ Pod::Spec.new do |s|
 
   s.source_files  =  "HHServiceSDK/*.{h,m}"
 
-  s.public_header_files = 'HHServiceSDK/*.h'
+  #s.public_header_files = 'HHServiceSDK/{HHServiceSDK,HHSingleton,HHMacros}.h'
 
+
+  s.subspec 'macros' do |ss|
+ 
+    ss.source_files = 'HHServiceSDK/macros/*.{h,m}' 
+    ss.public_header_files = 'HHServiceSDK/macros/*.h' 
+ 
+  end
+
+
+  s.subspec 'singleton' do |ss|
+ 
+    ss.source_files = 'HHServiceSDK/singleton/*.{h,m}' 
+    ss.public_header_files = 'HHServiceSDK/singleton/*.h' 
+ 
+  end
 
   s.subspec 'sysAlert' do |ss| 
     ss.source_files = 'HHServiceSDK/sysAlert/*.{h,m}'
@@ -198,7 +213,7 @@ Pod::Spec.new do |s|
     ss.source_files = 'HHServiceSDK/baseView/{WKWebView,imageCode}/*.{h,m}' 
     ss.public_header_files = 'HHServiceSDK/baseView/{WKWebView,imageCode}/{WKWebViewVC,HHImageCode}.h'
     ss.frameworks ='WebKit' 
-    ss.dependency 'HHServiceSDK/HHMacros.h'
+    ss.dependency 'HHServiceSDK/macros'
  
   end
 

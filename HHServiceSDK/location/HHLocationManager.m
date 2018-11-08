@@ -8,7 +8,7 @@
 
 #import "HHLocationManager.h"
 #import "HHUseInfo.h"
-#import "HHMacros.h"
+//#import <HHServiceSDK/HHMacros.h>
 
 @interface HHLocationManager()<CLLocationManagerDelegate>
 
@@ -39,7 +39,8 @@
 
 @implementation HHLocationManager
 
-SingletonM(Instance);
+//SingletonM(Instance);
+
 //懒加载
 -(CLLocationManager *)locationManager{
     if (_locationManager == nil) {
@@ -63,7 +64,7 @@ SingletonM(Instance);
         [self.locationManager startUpdatingLocation];
     }else{
         //未开启授权
-        HHLog(@"未开启定位授权");
+        NSLog(@"未开启定位授权");
     }
 }
 
@@ -80,16 +81,16 @@ SingletonM(Instance);
     NSString* altitudeStr  = [NSString stringWithFormat:@"%.4f",self.altitude];
     NSString* radiusStr    = [NSString stringWithFormat:@"%.4f",self.radius];
     
-    NSString* countryStr = NotNil(self.country);
-    NSString* countryCodeStr = NotNil(self.countryCode);
-    NSString* provinceStr  =   NotNil(self.province);
-    NSString* cityStr      =   NotNil(self.city);
-    NSString* districtStr  =   NotNil(self.district);
-    NSString* addrStr      =   NotNil(self.addr);
+    NSString* countryStr = self.country?:@"";
+    NSString* countryCodeStr = self.countryCode?:@"";
+    NSString* provinceStr  =   self.province?:@"";
+    NSString* cityStr      =   self.city?:@"";
+    NSString* districtStr  =   self.district?:@"";
+    NSString* addrStr      =   self.addr?:@"";
     
     NSDictionary* resultDict=[NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:longitudeStr,latitudeStr,altitudeStr,radiusStr,countryStr,countryCodeStr,provinceStr,cityStr,districtStr,addrStr,@"", nil] forKeys:[NSArray arrayWithObjects:@"longitude",@"latitude",@"altitude",@"radius",@"country",@"countryCode",@"province",@"city",@"district",@"addr",@"lac",nil]];
     
-    return dictToJson(resultDict);
+    return [self dictToJson:resultDict];
 }
 
 //获取经度
@@ -106,6 +107,21 @@ SingletonM(Instance);
 
 #pragma mark - 定位相关
 #pragma mark
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations{
+    
+    CLLocation *newLocation = locations.lastObject;
+    
+    self.longitude=newLocation.coordinate.longitude;
+    self.altitude=newLocation.altitude;
+    self.latitude=newLocation.coordinate.latitude;
+    self.radius=newLocation.horizontalAccuracy;
+    CLLocationCoordinate2D mylocation;
+    mylocation.latitude=self.latitude;
+    mylocation.longitude=self.longitude;
+    
+    [self showWithlocation:mylocation];
+}
 
 - (void)locationManager:(CLLocationManager *)manager
     didUpdateToLocation:(CLLocation *)newLocation
@@ -170,6 +186,16 @@ SingletonM(Instance);
         //打开定位 后重新获取位置
         [self startLocationMonitor];
     }
+}
+
+
+-(NSString*)dictToJson:(NSDictionary*)dict{
+    if (dict == nil) {
+        return @"";
+    }
+    NSError *parseError = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:&parseError];
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
 }
 
 @end

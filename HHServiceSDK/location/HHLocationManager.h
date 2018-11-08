@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import <HHServiceSDK/HHSingleton.h>
+//#import "HHSingleton.h"
 
 @interface HHLocationManager : CLLocationManager
 
-SingletonH(Instance);
+//SingletonH(Instance);
 
 //开始定位
 -(void) startLocationMonitor;
