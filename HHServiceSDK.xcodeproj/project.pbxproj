@@ -21,10 +21,14 @@
 		A03B3039219420610044C5CF /* HHImageCode.h in Headers */ = {isa = PBXBuildFile; fileRef = A03B302A219420600044C5CF /* HHImageCode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A03B303A219420610044C5CF /* TakeInSecretVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A03B302C219420600044C5CF /* TakeInSecretVC.m */; };
 		A03B303B219420610044C5CF /* TakeInSecretVC.h in Headers */ = {isa = PBXBuildFile; fileRef = A03B302D219420600044C5CF /* TakeInSecretVC.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A03B303F2194517F0044C5CF /* HHMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A03B303D2194517F0044C5CF /* HHMacros.h */; };
-		A03B3042219459370044C5CF /* HHSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = A03B3041219459370044C5CF /* HHSingleton.h */; };
-		A03B3046219459F00044C5CF /* HHSingletons.h in Headers */ = {isa = PBXBuildFile; fileRef = A03B3044219459F00044C5CF /* HHSingletons.h */; };
+		A03B303F2194517F0044C5CF /* HHMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = A03B303D2194517F0044C5CF /* HHMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A03B3042219459370044C5CF /* HHSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = A03B3041219459370044C5CF /* HHSingleton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A03B3046219459F00044C5CF /* HHSingletons.h in Headers */ = {isa = PBXBuildFile; fileRef = A03B3044219459F00044C5CF /* HHSingletons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A03B3047219459F00044C5CF /* HHSingletons.m in Sources */ = {isa = PBXBuildFile; fileRef = A03B3045219459F00044C5CF /* HHSingletons.m */; };
+		A060F8F721B530520061269F /* HHToast.h in Headers */ = {isa = PBXBuildFile; fileRef = A060F8F121B530520061269F /* HHToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A060F8F821B530520061269F /* HHToast.m in Sources */ = {isa = PBXBuildFile; fileRef = A060F8F221B530520061269F /* HHToast.m */; };
+		A060F8F921B530520061269F /* UIView+HHCorner.h in Headers */ = {isa = PBXBuildFile; fileRef = A060F8F521B530520061269F /* UIView+HHCorner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A060F8FA21B530520061269F /* UIView+HHCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = A060F8F621B530520061269F /* UIView+HHCorner.m */; };
 		A073DA1F21914CB200C3DA04 /* HHServiceSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A073DA1D21914CB200C3DA04 /* HHServiceSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A073DA7F21914E1600C3DA04 /* QRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A073DA7721914E1600C3DA04 /* QRView.m */; };
 		A073DA8021914E1600C3DA04 /* qr_scan_line_jd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A073DA7821914E1600C3DA04 /* qr_scan_line_jd@2x.png */; };
@@ -57,6 +61,10 @@
 		A03B3041219459370044C5CF /* HHSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHSingleton.h; sourceTree = "<group>"; };
 		A03B3044219459F00044C5CF /* HHSingletons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHSingletons.h; sourceTree = "<group>"; };
 		A03B3045219459F00044C5CF /* HHSingletons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHSingletons.m; sourceTree = "<group>"; };
+		A060F8F121B530520061269F /* HHToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHToast.h; sourceTree = "<group>"; };
+		A060F8F221B530520061269F /* HHToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHToast.m; sourceTree = "<group>"; };
+		A060F8F521B530520061269F /* UIView+HHCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HHCorner.h"; sourceTree = "<group>"; };
+		A060F8F621B530520061269F /* UIView+HHCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HHCorner.m"; sourceTree = "<group>"; };
 		A073DA1A21914CB200C3DA04 /* HHServiceSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHServiceSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A073DA1D21914CB200C3DA04 /* HHServiceSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHServiceSDK.h; sourceTree = "<group>"; };
 		A073DA1E21914CB200C3DA04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,6 +174,32 @@
 			path = singleton;
 			sourceTree = "<group>";
 		};
+		A060F8F021B530520061269F /* toast */ = {
+			isa = PBXGroup;
+			children = (
+				A060F8F121B530520061269F /* HHToast.h */,
+				A060F8F221B530520061269F /* HHToast.m */,
+			);
+			path = toast;
+			sourceTree = "<group>";
+		};
+		A060F8F321B530520061269F /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A060F8F421B530520061269F /* UIView */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
+		A060F8F421B530520061269F /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				A060F8F521B530520061269F /* UIView+HHCorner.h */,
+				A060F8F621B530520061269F /* UIView+HHCorner.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		A073DA1021914CB200C3DA04 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +219,8 @@
 		A073DA1C21914CB200C3DA04 /* HHServiceSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A060F8F321B530520061269F /* extensions */,
+				A060F8F021B530520061269F /* toast */,
 				A03B3043219459880044C5CF /* singleton */,
 				A03B303C2194517F0044C5CF /* macros */,
 				A03B3022219420600044C5CF /* baseView */,
@@ -232,17 +268,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				A03B3042219459370044C5CF /* HHSingleton.h in Headers */,
+				A060F8F721B530520061269F /* HHToast.h in Headers */,
+				A060F8F921B530520061269F /* UIView+HHCorner.h in Headers */,
+				A03B303F2194517F0044C5CF /* HHMacros.h in Headers */,
+				A03B3046219459F00044C5CF /* HHSingletons.h in Headers */,
 				A03B2FEB219299E60044C5CF /* HHValidLocalAuthManager.h in Headers */,
 				A03B3033219420610044C5CF /* HHLocationManager.h in Headers */,
 				A03B3030219420610044C5CF /* HHUseInfo.h in Headers */,
-				A03B303F2194517F0044C5CF /* HHMacros.h in Headers */,
 				A03B303B219420610044C5CF /* TakeInSecretVC.h in Headers */,
 				A03B3037219420610044C5CF /* WKWebViewVC.h in Headers */,
 				A03B3039219420610044C5CF /* HHImageCode.h in Headers */,
 				A073DA8A21914E6200C3DA04 /* HHAlert.h in Headers */,
 				A073DA8621914E1600C3DA04 /* ScanQR.h in Headers */,
 				A073DA8221914E1600C3DA04 /* QRTool.h in Headers */,
-				A03B3046219459F00044C5CF /* HHSingletons.h in Headers */,
 				A073DA1F21914CB200C3DA04 /* HHServiceSDK.h in Headers */,
 				A03B3036219420610044C5CF /* WKDelegateController.h in Headers */,
 				A073DA8421914E1600C3DA04 /* QRView.h in Headers */,
@@ -329,7 +367,9 @@
 				A073DA8521914E1600C3DA04 /* QRTool.m in Sources */,
 				A03B3032219420610044C5CF /* HHLocationManager.m in Sources */,
 				A03B303A219420610044C5CF /* TakeInSecretVC.m in Sources */,
+				A060F8FA21B530520061269F /* UIView+HHCorner.m in Sources */,
 				A03B2FEA219299E60044C5CF /* HHValidLocalAuthManager.m in Sources */,
+				A060F8F821B530520061269F /* HHToast.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

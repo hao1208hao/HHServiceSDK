@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HHServiceSDK"
-  s.version      = "1.0.3"
+  s.version      = "1.0.4"
   s.summary      = "HHServiceSDK usual tools."
 
   # This description is used to generate tags and improve search results.
@@ -224,10 +224,33 @@ Pod::Spec.new do |s|
       sss.public_header_files = 'HHServiceSDK/baseView/imageCode/HHImageCode.h'
       sss.dependency 'HHServiceSDK/macros'
 
-    end
+    end 
  
     
  
   end
+
+
+  s.subspec 'extensions' do |ss|
+    
+    ss.subspec 'UIView' do |sss|
+      sss.source_files = 'HHServiceSDK/extensions/UIView/*.{h,m}' 
+      sss.public_header_files = 'HHServiceSDK/extensions/UIView/UIView+HHCorner.h'
+
+    end 
+
+  end
+
+
+  s.subspec 'toast' do |ss|
+
+    ss.source_files = 'HHServiceSDK/toast/*.{h,m}' 
+    ss.public_header_files = 'HHServiceSDK/toast/*.h'
+
+
+  end
+
+
+
 
 end
