@@ -13,7 +13,7 @@
 #import "WKDelegateController.h"
 #import "HHMacros.h"
 
-@interface WKWebViewVC()<WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler,WKDelegate>
+@interface WKWebViewVC()<WKUIDelegate,WKNavigationDelegate,WKScriptMessageHandler,WKDelegate,UIGestureRecognizerDelegate>
 
 /** WKWebView对象 */
 @property(nonatomic,strong) WKWebView* wk;
@@ -22,9 +22,40 @@
 
 @property(nonatomic,strong) WKUserContentController* userContentController;
 
+//手势
+@property (nonatomic, strong) id <UIGestureRecognizerDelegate>delegate;
+
 @end
 
 @implementation WKWebViewVC
+
+#pragma mark - 自定义导航按钮支持侧滑手势处理
+#pragma mark -
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.navigationController.viewControllers.count > 1) {
+        self.delegate = self.navigationController.interactivePopGestureRecognizer.delegate;
+        self.navigationController.interactivePopGestureRecognizer.delegate = self;
+    }
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.interactivePopGestureRecognizer.delegate = self.delegate;
+}
+
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return self.navigationController.viewControllers.count > 1;
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return self.navigationController.viewControllers.count > 1;
+}
+
+
+#pragma mark - 页面开始
+#pragma mark -
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,6 +77,8 @@
     _wk = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:configuration];
     _wk.UIDelegate = self;
     _wk.navigationDelegate = self;
+    //添加此属性可触发侧滑返回上一网页与下一网页操作
+    _wk.allowsBackForwardNavigationGestures = YES;
     [self.view addSubview:_wk];
     
     self.progressView = [[UIProgressView alloc]initWithFrame:CGRectMake(0, SafeAreaTopHeight, SCREEN_WIDTH, 2)];
@@ -169,7 +202,7 @@
 }
 
 #pragma mark - 代理事件
-#pragma mark
+#pragma mark -
 
 #pragma mark - WKNavigationDelegate 
 // 开始导航跳转时会回调
